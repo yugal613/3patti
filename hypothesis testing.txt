@@ -1,0 +1,66 @@
+## Hypo for 2 proportion 
+#Null        :Statisctcally there is no significat diff between two drugs
+#Alternative :There is a significatnt 
+
+prop.test(c(350,260),c(600,500))
+
+# as p value is <0.5 accept so null hyp os rejected
+
+
+## Hypo for 2 proportion 
+#Null        :Statisctcally there is no significat diff between somkers count before and after tax
+#Alternative :There is a significatnt 
+prop.test(c(400,400),c(500,600))
+
+# conclusion 
+# p value >.05 so null hpyo is rejected
+# there is significant diff between before and after tax
+
+
+##  one samle t test: hypo test for 2 proportion
+##hypothesis:  avg sal working in company is 35k
+## Null     : 
+## Alternate: 
+#################################################################################
+iris
+sl = iris$Sepal.Length
+hist(sl,prob=T)
+curve(dnorm(x,mean=mean(sl),sd=sd(sl)),add=T)
+
+qqnorm(sl)
+qqline(sl)
+shapiro.test(sl)
+
+trees
+sl = trees$Volume
+hist(sl,prob=T)
+curve(dnorm(x,mean=mean(sl),sd=sd(sl)),add=T)
+
+qqnorm(sl)
+qqline(sl)
+shapiro.test(sl)
+hist(trees,prob=T)
+
+## data pre processing
+## transform positively skewed data 
+# methods:
+#1 :log(values) log transformation
+#2 :sqrt(values)log transformation
+#3 :power transformation
+
+#log transofrmation: for positive distribution
+logvolume=log((trees$Volume))
+hist(logvolume,prob=T)
+curve(dnorm(x,mean=mean(logvolume),sd=sd(logvolume)),add=T)
+
+#power transofrmation : only for negativly skewed to normal:
+y = c(1,2,3,4,5,6,7,8,9,11,12,11,13,14,13,12,11,13,14,15,15)
+y = y^2
+hist(y,prob=T)
+curve(dnorm(x,mean=mean(y),sd=sd(y)),add=T)
+
+
+
+
+
+
